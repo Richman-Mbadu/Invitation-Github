@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitation Mariage</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <!-- <img src="images/Haraka logo.jpg" alt="Logo Haraka"> -->
+        </div>
+        <h1>Invitation<br><span>
+            <div class="special">Spécial</div>
+        </span></h1>
+    </header>
+    <main>
+        <section class="table-info">
+            <p><div class="table-name">Bienvenue au mariage <br>de !
+            </div></p>
+            <h2>Richman &amp; Charlène</h2>
+            <img class="photo" src="images/nous.JPG" alt="Photo">
+            <p><div class="date">20/12/2025</div></p>
+            <div class="stats">
+                <span><strong id="total">0</strong> invités | </span>
+                <span class="present"><strong id="present">0 </strong>présents | </span>
+                <span class="absent"><strong id="absent">0</strong> absents</span>
+            </div>
+            <!-- <div class="invites">
+                <p class="invites-titre">Invités</p>
+                <p class="invites-name">Couple Dan Mpanzu & charmante</p>
+            </div> -->
+            <!-- <button class="confirm-btn" id="confirmBtn">Confirmer ma présence</button> -->
+
+            <div class="table">
+                <h2 class="maint"><strong>Tables(10)</strong></h2>
+                <p>Famille du marié</p>
+                <h4>1.Table Kinshasa</h4>
+                <ul>
+                    <li class="guest">Richman <span class="check">✓</span></li>
+                    <li class="guest">Dan Mpanzu <span class="check">✓</span></li>
+                    <li class="guest">Christian <span class="check">✓</span></li>
+                </ul>
+                <h4>2.Table Lumbumbashi</h4>
+                <ul>
+                    <li class="guest">Richman <span class="check">✓</span></li>
+                    <li class="guest">Dan Mpanzu <span class="check">✓</span></li>
+                    <li class="guest">Christian <span class="check">✓</span></li>
+                </ul>
+                <h4>3.Table Boma</h4>
+                <ul>
+                    <li class="guest">Richman <span class="check">✓</span></li>
+                    <li class="guest">Dan Mpanzu <span class="check">✓</span></li>
+                    <li class="guest">Christian <span class="check">✓</span></li>
+                </ul>
+                <h4>4.Table Matadi</h4>
+                <ul>
+                    <li class="guest">Richman <span class="check">✓</span></li>
+                    <li class="guest">Dan Mpanzu <span class="check">✓</span></li>
+                    <li class="guest">Christian <span class="check">✓</span></li>
+                </ul>
+                <h4>5.Table Kisangani</h4>
+                <ul>
+                    <li class="guest">Richman <span class="check">✓</span></li>
+                    <li class="guest">Dan Mpanzu <span class="check">✓</span></li>
+                    <li class="guest">Christian <span class="check">✓</span></li>
+                </ul>
+                <p>Famille de la mariée</p>
+                <h4>6.Table Bandundu</h4>
+                <ul> 
+                    <li class="guest">Richman <span class="check">✓</span></li>
+                    <li class="guest">Dan Mpanzu <span class="check">✓</span></li>
+                    <li class="guest">Christian <span class="check">✓</span></li>
+                </ul>
+                <h4>7.Table Goma</h4>
+                <ul>
+                    <li class="guest">Richman <span class="check">✓</span></li>
+                    <li class="guest">Dan Mpanzu <span class="check">✓</span></li>
+                    <li class="guest">Christian <span class="check">✓</span></li>
+                </ul>
+                <h4>8.Table Bunia</h4>
+                <ul>
+                    <li class="guest">Richman <span class="check">✓</span></li>
+                    <li class="guest">Dan Mpanzu <span class="check">✓</span></li>
+                    <li class="guest">Christian <span class="check">✓</span></li>
+                </ul>
+                <h4>9.Table Kananga</h4>
+                    <p>Amis et connaissances</p>
+                <ul>
+                    <li class="guest">Richman <span class="check">✓</span></li>
+                    <li class="guest">Dan Mpanzu <span class="check">✓</span></li>
+                    <li class="guest">Christian <span class="check">✓</span></li>
+                </ul>
+                <h4>10.Table Bukavu</h4>
+                <ul>
+                    <li class="guest">Richman <span class="check">✓</span></li>
+                    <li class="guest">Dan Mpanzu <span class="check">✓</span></li>
+                    <li class="guest">Christian <span class="check">✓</span></li>
+                </ul>
+            </div>
+            <!-- <h3>Autres invités</h3> -->
+            <!-- <div class="guest-list">
+                <div class="guest-absent">Christian</div>
+                <div class="guest-absent">Dan</div>
+                <div class="guest-absent">Jean</div>
+                <div class="guest-absent">Michel</div>
+                <div class="guest-absent">Samuel</div>
+                <div class="guest-absent">David</div>
+                <div class="guest-absent">Emmanuel</div>
+            </div> -->
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Haraka Digital. Tous droits réservés.</p>
+    </footer>
+    <script>
+        // Sélection des compteurs
+    const totalSpan = document.getElementById("total");
+    const presentSpan = document.getElementById("present");
+    const absentSpan = document.getElementById("absent");
+
+    // Sélection de toutes les icônes ✓
+    const checks = document.querySelectorAll(".check");
+
+    // Calcul du total d’invités
+    let totalGuests = checks.length;
+    let presentGuests = 0;
+    let absentGuests = totalGuests;
+
+    // Affichage initial
+    totalSpan.textContent = totalGuests;
+    absentSpan.textContent = absentGuests;
+
+    // Gestion du clic
+    checks.forEach(check => {
+        check.addEventListener("click", function () {
+
+            if (this.classList.contains("validated")) return;
+
+            presentGuests++;
+            absentGuests--;
+
+            presentSpan.textContent = presentGuests;
+            absentSpan.textContent = absentGuests;
+
+            this.classList.add("validated");
+        });
+    });
+    </script>
+</body>
+</html>
